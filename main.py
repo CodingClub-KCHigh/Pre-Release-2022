@@ -30,8 +30,8 @@ while num_holes > 0:
         while stroke_1 != stroke_2:
             print("Error. Both strokes are not equal.")
             stroke_1 = int(input(f"{name} enter the number of strokes: "))
-            stroke_2 = int(input(f"{name} enter the number of strokes again to confirm: "))
-        scores[names.index(name)] += stroke_2
+            stroke_2 = int(input(f"Enter the number of strokes again to confirm: "))
+        scores[names.index(name)][num_holes_played-1]+=stroke_2  
         choice = input("Do you wish to see the total number of strokes you have played? (y/n): ")
         if choice == "y":
             print(f"{name}'s total strokes is {scores[names.index(name)]}")
@@ -39,7 +39,9 @@ while num_holes > 0:
     print(f"You have {num_holes-1} holes left to play")
     num_holes-=1
     num_holes_played+=1
-print("The round is over")
+    print(scores) 
+    [[10,0,0,0,0,0,0,0,0], [5,0,0,0,0,0,0,0,0]]
+print("The round is over\n\n")
 # ---------------------------------------------
 # ------------- TASK 3 ------------------
 #!!! Task 3 is not fully completed
